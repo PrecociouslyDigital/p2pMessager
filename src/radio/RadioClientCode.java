@@ -52,56 +52,6 @@ public class RadioClientCode {
             input = con.nextLine();
     }
     }
-
-    /*public static URL addSong(Scanner in) {
-        System.out.println("Artist?");
-        String urlpart = in.nextLine().replace(' ', '_');
-        System.out.println("Song?");
-        urlpart += "-" + in.nextLine().replace(' ', '_');
-        try {
-            radio.add(new URL("http://www.cool-midi.com/download/" + urlpart + ".htm"), urlpart.replace('_', ' '));
-        } catch (Exception ex) {
-            Logger.getLogger(RadioClientCode.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return null;
-    }*/
-
-    public static void parseUrl(String thing) {
-
-        /*URL url;
-        try {
-            url = new URL(thing);
-        } catch (Exception e) {
-            try {
-                url = new URL("http://www.cool-midi.com/download/" + thing.replace(' ', '_') + ".htm");
-            } catch (MalformedURLException ex) {
-                System.out.println("Not a valid song/url!");
-                return;
-            }
-        }
-        try {
-            radio.add(url, parseName(thing));
-            System.out.println("Added " + thing);
-        } catch (Exception ex) {
-            System.out.println("Not a valid song/url!");
-            return;
-        }*/
-        
-    }
-
-public static void parsePlayList(String file){
-        File filed = new File(file);
-        Scanner scn = new Scanner("");
-        try {
-            scn = new Scanner(filed);
-        } catch (FileNotFoundException ex) {
-            System.out.println("Can't find that file!");
-        }
-        while(scn.hasNext()){
-            parseUrl(scn.nextLine());
-        }
-        
-    }
 public static String parseName(String thing){
     if(thing.contains("http://www.cool-midi.com/download/"))
         thing = thing.substring(34, thing.length()-3);

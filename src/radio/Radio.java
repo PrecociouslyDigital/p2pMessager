@@ -20,7 +20,6 @@ import javax.sound.sampled.*;
  */
 public class Radio /*extends Thread*/ {
 
-    //List<URL> stack = new LinkedList<>();
     Sequencer song;
 
     /**
@@ -29,23 +28,6 @@ public class Radio /*extends Thread*/ {
     public Radio() {
 
     }
-
-    /*public void skip() {
-        song.stop();
-        stack.remove(0);
-        try {
-            song.setSequence(MidiSystem.getSequence(stack.get(0)));
-            song.start();
-            System.out.println("now playing: " + getName(stack.get(0)));
-            
-        } catch (InvalidMidiDataException ex) {
-            System.out.println("Error!");
-            skip();
-        } catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-    }*/
     public String getName(URL url){
     	String[] parts = url.toString().split("/"); //http://www.cool-midi.com/midi/b/black_eyed_peas-i_gotta_feeling.mid
     	String target = parts[6];
@@ -92,10 +74,4 @@ public class Radio /*extends Thread*/ {
         song.stop();
         song = null;
     }
-
-    /*public void run() {
-        if (!song.isRunning()) {
-            skip();
-        }
-    }*/
 }
